@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Dashbox" Class="DashBoxDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=Dashbox;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DashboxConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ChartTypes" Member="ChartTypes">
+    <Type Name="ChartType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dashboards" Member="Dashboards">
+    <Type Name="Dashboard">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="LayoutId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Layouts" Member="Layouts">
+    <Type Name="Layout">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Charts" Member="Charts">
+    <Type Name="Chart">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConnectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EntiteName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SerieColumnName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CategorieColumnName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Categorie2ColumnName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SerieAgregationType" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Components" Member="Components">
+    <Type Name="Component">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ChartId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Postion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DashboardId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="Users">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Connections" Member="Connections">
+    <Type Name="Connections">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

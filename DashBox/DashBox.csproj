@@ -1,0 +1,1419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98A558A4-E5B6-44EF-BA39-7FD176C6B59B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DashBox</RootNamespace>
+    <AssemblyName>DashBox</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>896314bf</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AttributeRouting">
+      <HintPath>..\packages\AttributeRouting.WebApi.2.4.3.0\lib\net40\AttributeRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web">
+      <HintPath>..\packages\AttributeRouting.WebApi.2.4.3.0\lib\net40\AttributeRouting.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Http">
+      <HintPath>..\packages\AttributeRouting.WebApi.2.4.3.0\lib\net40\AttributeRouting.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="AttributeRouting.Web.Http.WebHost">
+      <HintPath>..\packages\AttributeRouting.WebApi.2.4.3.0\lib\net40\AttributeRouting.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Xrm.Sdk, Version=8.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.0.0.0\lib\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DashboardEditor.aspx" />
+    <Content Include="Charts.aspx" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\kendo\2012.2.710\Black\editor.png" />
+    <Content Include="Content\kendo\2012.2.710\Black\imagebrowser.png" />
+    <Content Include="Content\kendo\2012.2.710\Black\loading-image.gif" />
+    <Content Include="Content\kendo\2012.2.710\Black\loading.gif" />
+    <Content Include="Content\kendo\2012.2.710\Black\slider-h.gif" />
+    <Content Include="Content\kendo\2012.2.710\Black\slider-v.gif" />
+    <Content Include="Content\kendo\2012.2.710\Black\sprite.png" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\editor.png" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\imagebrowser.png" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\loading-image.gif" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\loading.gif" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\slider-h.gif" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\slider-v.gif" />
+    <Content Include="Content\kendo\2012.2.710\BlueOpal\sprite.png" />
+    <Content Include="Content\kendo\2012.2.710\Default\editor.png" />
+    <Content Include="Content\kendo\2012.2.710\Default\imagebrowser.png" />
+    <Content Include="Content\kendo\2012.2.710\Default\loading-image.gif" />
+    <Content Include="Content\kendo\2012.2.710\Default\loading.gif" />
+    <Content Include="Content\kendo\2012.2.710\Default\slider-h.gif" />
+    <Content Include="Content\kendo\2012.2.710\Default\slider-v.gif" />
+    <Content Include="Content\kendo\2012.2.710\Default\sprite.png" />
+    <Content Include="Content\kendo\2012.2.710\kendo.black.min.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.blueopal.min.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.common.min.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.default.min.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.metro.min - Copy.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.metro.min.css" />
+    <Content Include="Content\kendo\2012.2.710\kendo.silver.min.css" />
+    <Content Include="Content\kendo\2012.2.710\Metro\editor.png" />
+    <Content Include="Content\kendo\2012.2.710\Metro\imagebrowser.png" />
+    <Content Include="Content\kendo\2012.2.710\Metro\loading-image.gif" />
+    <Content Include="Content\kendo\2012.2.710\Metro\loading.gif" />
+    <Content Include="Content\kendo\2012.2.710\Metro\slider-h.gif" />
+    <Content Include="Content\kendo\2012.2.710\Metro\slider-v.gif" />
+    <Content Include="Content\kendo\2012.2.710\Metro\sprite.png" />
+    <Content Include="Content\kendo\2012.2.710\Silver\editor.png" />
+    <Content Include="Content\kendo\2012.2.710\Silver\imagebrowser.png" />
+    <Content Include="Content\kendo\2012.2.710\Silver\loading-image.gif" />
+    <Content Include="Content\kendo\2012.2.710\Silver\loading.gif" />
+    <Content Include="Content\kendo\2012.2.710\Silver\slider-h.gif" />
+    <Content Include="Content\kendo\2012.2.710\Silver\slider-v.gif" />
+    <Content Include="Content\kendo\2012.2.710\Silver\sprite.png" />
+    <Content Include="Content\kendo\2012.2.710\textures\glass.png" />
+    <Content Include="Content\kendo\2012.2.710\textures\highlight.png" />
+    <Content Include="Content\kendo\kendo.bootstrap.min.css" />
+    <Content Include="Content\kendo\kendo.common-bootstrap.min.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="Content\theme-chooser.js" />
+    <Content Include="css\animate.min.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\calendar\fullcalendar.css" />
+    <Content Include="css\calendar\fullcalendar.min.css" />
+    <Content Include="css\calendar\fullcalendar.print.css" />
+    <Content Include="css\colorpicker\bootstrap-colorpicker.min.css" />
+    <Content Include="css\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="css\colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="css\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="css\colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="css\colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\datatables\css\demo_page.css" />
+    <Content Include="css\datatables\css\demo_table.css" />
+    <Content Include="css\datatables\css\demo_table_jui.css" />
+    <Content Include="css\datatables\css\jquery.dataTables.css" />
+    <Content Include="css\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="css\datatables\images\back_disabled.png" />
+    <Content Include="css\datatables\images\back_enabled.png" />
+    <Content Include="css\datatables\images\back_enabled_hover.png" />
+    <Content Include="css\datatables\images\favicon.ico" />
+    <Content Include="css\datatables\images\forward_disabled.png" />
+    <Content Include="css\datatables\images\forward_enabled.png" />
+    <Content Include="css\datatables\images\forward_enabled_hover.png" />
+    <Content Include="css\datatables\images\sort_asc.png" />
+    <Content Include="css\datatables\images\sort_asc_disabled.png" />
+    <Content Include="css\datatables\images\sort_both.png" />
+    <Content Include="css\datatables\images\sort_desc.png" />
+    <Content Include="css\datatables\images\sort_desc_disabled.png" />
+    <Content Include="css\datatables\tools\css\dataTables.tableTools.css" />
+    <Content Include="css\editor\external\google-code-prettify\prettify.css" />
+    <Content Include="css\editor\index.css" />
+    <Content Include="css\floatexamples.css" />
+    <Content Include="css\icheck\flat\aero%402x.png" />
+    <Content Include="css\icheck\flat\aero.css" />
+    <Content Include="css\icheck\flat\aero.png" />
+    <Content Include="css\icheck\flat\blue%402x.png" />
+    <Content Include="css\icheck\flat\blue.css" />
+    <Content Include="css\icheck\flat\blue.png" />
+    <Content Include="css\icheck\flat\flat%402x.png" />
+    <Content Include="css\icheck\flat\flat.css" />
+    <Content Include="css\icheck\flat\flat.png" />
+    <Content Include="css\icheck\flat\green%402x.png" />
+    <Content Include="css\icheck\flat\green.css" />
+    <Content Include="css\icheck\flat\green.png" />
+    <Content Include="css\icheck\flat\grey%402x.png" />
+    <Content Include="css\icheck\flat\grey.css" />
+    <Content Include="css\icheck\flat\grey.png" />
+    <Content Include="css\icheck\flat\orange%402x.png" />
+    <Content Include="css\icheck\flat\orange.css" />
+    <Content Include="css\icheck\flat\orange.png" />
+    <Content Include="css\icheck\flat\pink%402x.png" />
+    <Content Include="css\icheck\flat\pink.css" />
+    <Content Include="css\icheck\flat\pink.png" />
+    <Content Include="css\icheck\flat\purple%402x.png" />
+    <Content Include="css\icheck\flat\purple.css" />
+    <Content Include="css\icheck\flat\purple.png" />
+    <Content Include="css\icheck\flat\red%402x.png" />
+    <Content Include="css\icheck\flat\red.css" />
+    <Content Include="css\icheck\flat\red.png" />
+    <Content Include="css\icheck\flat\yellow%402x.png" />
+    <Content Include="css\icheck\flat\yellow.css" />
+    <Content Include="css\icheck\flat\yellow.png" />
+    <Content Include="css\icheck\flat\_all.css" />
+    <Content Include="css\ion.rangeSlider.css" />
+    <Content Include="css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="css\maps\jquery-jvectormap-2.0.3.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\nprogress.css" />
+    <Content Include="css\progressbar\bootstrap-progressbar-3.3.0.css" />
+    <Content Include="css\select\select2.min.css" />
+    <Content Include="css\switchery\switchery.min.css" />
+    <Content Include="Connections.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="fonts\css\font-awesome.css" />
+    <Content Include="fonts\css\font-awesome.min.css" />
+    <Content Include="fonts\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\1.png" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\american-express.png" />
+    <Content Include="images\back_disabled.png" />
+    <Content Include="images\back_enabled.png" />
+    <Content Include="images\back_enabled_hover.png" />
+    <Content Include="images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="images\bootstrap-colorpicker\hue.png" />
+    <Content Include="images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="images\data.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\forward_disabled.png" />
+    <Content Include="images\forward_enabled.png" />
+    <Content Include="images\forward_enabled_hover.png" />
+    <Content Include="images\icons.png" />
+    <Content Include="images\img.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\mastercard.png" />
+    <Content Include="images\paypal2.png" />
+    <Content Include="images\picture-2.jpg" />
+    <Content Include="images\picture.jpg" />
+    <Content Include="images\picture2.jpg" />
+    <Content Include="images\prod1.jpg" />
+    <Content Include="images\prod2.jpg" />
+    <Content Include="images\prod3.jpg" />
+    <Content Include="images\prod4.jpg" />
+    <Content Include="images\prod5.jpg" />
+    <Content Include="images\sort_asc.png" />
+    <Content Include="images\sort_asc_disabled.png" />
+    <Content Include="images\sort_both.png" />
+    <Content Include="images\sort_desc.png" />
+    <Content Include="images\sort_desc_disabled.png" />
+    <Content Include="images\sprite-skin-flat.png" />
+    <Content Include="images\sprite-skin-modern.png" />
+    <Content Include="images\sprite-skin-nice.png" />
+    <Content Include="images\sprite-skin-simple.png" />
+    <Content Include="images\user.png" />
+    <Content Include="images\visa.png" />
+    <Content Include="img\Logo.png" />
+    <Content Include="img\logo2.png" />
+    <Content Include="js\autocomplete\countries.js" />
+    <Content Include="js\autocomplete\jquery.autocomplete.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\calendar\fullcalendar.min.js" />
+    <Content Include="js\chartjs\chart.min.js" />
+    <Content Include="js\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="js\colorpicker\docs.js" />
+    <Content Include="js\cropping\cropper.min.js" />
+    <Content Include="js\cropping\main.js" />
+    <Content Include="js\cropping\main2.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\datatables\images\back_disabled.png" />
+    <Content Include="js\datatables\images\back_enabled.png" />
+    <Content Include="js\datatables\images\back_enabled_hover.png" />
+    <Content Include="js\datatables\images\favicon.ico" />
+    <Content Include="js\datatables\images\forward_disabled.png" />
+    <Content Include="js\datatables\images\forward_enabled.png" />
+    <Content Include="js\datatables\images\forward_enabled_hover.png" />
+    <Content Include="js\datatables\images\sort_asc.png" />
+    <Content Include="js\datatables\images\sort_asc_disabled.png" />
+    <Content Include="js\datatables\images\sort_both.png" />
+    <Content Include="js\datatables\images\sort_desc.png" />
+    <Content Include="js\datatables\images\sort_desc_disabled.png" />
+    <Content Include="js\datatables\js\jquery.dataTables.js" />
+    <Content Include="js\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="js\datatables\js\jquery.js" />
+    <Content Include="js\datatables\src\api\api.internal.js" />
+    <Content Include="js\datatables\src\api\api.methods.js" />
+    <Content Include="js\datatables\src\api\api.static.js" />
+    <Content Include="js\datatables\src\core\core.ajax.js" />
+    <Content Include="js\datatables\src\core\core.columns.js" />
+    <Content Include="js\datatables\src\core\core.compat.js" />
+    <Content Include="js\datatables\src\core\core.constructor.js" />
+    <Content Include="js\datatables\src\core\core.data.js" />
+    <Content Include="js\datatables\src\core\core.draw.js" />
+    <Content Include="js\datatables\src\core\core.filter.js" />
+    <Content Include="js\datatables\src\core\core.info.js" />
+    <Content Include="js\datatables\src\core\core.init.js" />
+    <Content Include="js\datatables\src\core\core.length.js" />
+    <Content Include="js\datatables\src\core\core.page.js" />
+    <Content Include="js\datatables\src\core\core.processing.js" />
+    <Content Include="js\datatables\src\core\core.scrolling.js" />
+    <Content Include="js\datatables\src\core\core.sizing.js" />
+    <Content Include="js\datatables\src\core\core.sort.js" />
+    <Content Include="js\datatables\src\core\core.state.js" />
+    <Content Include="js\datatables\src\core\core.support.js" />
+    <Content Include="js\datatables\src\DataTables.js" />
+    <Content Include="js\datatables\src\ext\ext.classes.js" />
+    <Content Include="js\datatables\src\ext\ext.paging.js" />
+    <Content Include="js\datatables\src\ext\ext.sorting.js" />
+    <Content Include="js\datatables\src\ext\ext.types.js" />
+    <Content Include="js\datatables\src\model\model.column.js" />
+    <Content Include="js\datatables\src\model\model.defaults.columns.js" />
+    <Content Include="js\datatables\src\model\model.defaults.js" />
+    <Content Include="js\datatables\src\model\model.ext.js" />
+    <Content Include="js\datatables\src\model\model.row.js" />
+    <Content Include="js\datatables\src\model\model.search.js" />
+    <Content Include="js\datatables\src\model\model.settings.js" />
+    <Content Include="js\datatables\tools\examples\alter_buttons.xml" />
+    <Content Include="js\datatables\tools\examples\bootstrap.xml" />
+    <Content Include="js\datatables\tools\examples\button_text.xml" />
+    <Content Include="js\datatables\tools\examples\collection.xml" />
+    <Content Include="js\datatables\tools\examples\defaults.xml" />
+    <Content Include="js\datatables\tools\examples\index.xml" />
+    <Content Include="js\datatables\tools\examples\multiple_tables.xml" />
+    <Content Include="js\datatables\tools\examples\multi_instance.xml" />
+    <Content Include="js\datatables\tools\examples\new_init.xml" />
+    <Content Include="js\datatables\tools\examples\pdf_message.xml" />
+    <Content Include="js\datatables\tools\examples\plug-in.xml" />
+    <Content Include="js\datatables\tools\examples\select_column.xml" />
+    <Content Include="js\datatables\tools\examples\select_multi.xml" />
+    <Content Include="js\datatables\tools\examples\select_os.xml" />
+    <Content Include="js\datatables\tools\examples\select_single.xml" />
+    <Content Include="js\datatables\tools\examples\simple.xml" />
+    <Content Include="js\datatables\tools\examples\swf_path.xml" />
+    <Content Include="js\datatables\tools\images\background.png" />
+    <Content Include="js\datatables\tools\images\collection.png" />
+    <Content Include="js\datatables\tools\images\collection_hover.png" />
+    <Content Include="js\datatables\tools\images\copy.png" />
+    <Content Include="js\datatables\tools\images\copy_hover.png" />
+    <Content Include="js\datatables\tools\images\csv.png" />
+    <Content Include="js\datatables\tools\images\csv_hover.png" />
+    <Content Include="js\datatables\tools\images\pdf.png" />
+    <Content Include="js\datatables\tools\images\pdf_hover.png" />
+    <Content Include="js\datatables\tools\images\print.png" />
+    <Content Include="js\datatables\tools\images\print_hover.png" />
+    <Content Include="js\datatables\tools\images\xls.png" />
+    <Content Include="js\datatables\tools\images\xls_hover.png" />
+    <Content Include="js\datatables\tools\js\dataTables.tableTools.js" />
+    <Content Include="js\datatables\tools\Readme.txt" />
+    <Content Include="js\datatables\tools\src\dataTables.tableTools.js" />
+    <Content Include="js\datatables\tools\src\TableTools.js" />
+    <Content Include="js\datatables\tools\src\ZeroClipboard.js" />
+    <Content Include="js\datatables\tools\swf\copy_csv_xls.swf" />
+    <Content Include="js\datatables\tools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="js\datatables\tools\TableTools-master\css\dataTables.tableTools.css" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\alter_buttons.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\bootstrap.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\button_text.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\collection.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\defaults.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\index.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\multiple_tables.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\multi_instance.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\new_init.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\pdf_message.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\plug-in.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\select_column.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\select_multi.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\select_os.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\select_single.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\simple.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\examples\swf_path.xml" />
+    <Content Include="js\datatables\tools\TableTools-master\images\background.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\collection.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\collection_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\copy.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\copy_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\csv.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\csv_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\pdf.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\pdf_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\print.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\print_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\xls.png" />
+    <Content Include="js\datatables\tools\TableTools-master\images\xls_hover.png" />
+    <Content Include="js\datatables\tools\TableTools-master\js\dataTables.tableTools.js" />
+    <Content Include="js\datatables\tools\TableTools-master\Readme.txt" />
+    <Content Include="js\datatables\tools\TableTools-master\src\dataTables.tableTools.js" />
+    <Content Include="js\datatables\tools\TableTools-master\src\TableTools.js" />
+    <Content Include="js\datatables\tools\TableTools-master\src\ZeroClipboard.js" />
+    <Content Include="js\datatables\tools\TableTools-master\swf\copy_csv_xls.swf" />
+    <Content Include="js\datatables\tools\TableTools-master\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="js\datatables\unit_testing\controller.js" />
+    <Content Include="js\datatables\unit_testing\index.html" />
+    <Content Include="js\datatables\unit_testing\performance\draw.html" />
+    <Content Include="js\datatables\unit_testing\performance\page.html" />
+    <Content Include="js\datatables\unit_testing\performance\sort.html" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\-complex_header.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\-iDraw.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2512.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2530-2.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2530.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2569.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2600.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2608.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2635.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2746-stable-sort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2799.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2840-restore-table-width.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\2914-state-save-sort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays-mData.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\5508-xscroll-zero-content.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\6776-scrolling-table-grows.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible2.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.iDataSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bInfiniteScroll.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bJQueryUI.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bSortCellsTop.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnCookieCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnCreatedCell.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnCreatedRow.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnDeleteRow.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnFooterCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnInfoCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis2.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\gh125 - stripe stripping.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\html-autodetect-sort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\sScrollXY.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\th_in_body.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\_getDataFunctions.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\_setDataFunctions.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\1_dom\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\39-nested-null.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\6872-default-content-missing-props.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\8549--string-sorting-nonstrings.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.iDataSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnCreatedCell.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnCreatedRow.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnFooterCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\js_data_mixed_types.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\2_js\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.iDataSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedCell.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedRow.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\fnServerData.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLoadingRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp2.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\3_ajax\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\-iDraw.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\2440.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\2569.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\2600.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bInfiniteScroll.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedCell.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedRow.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\iDeferLoading.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\sAjaxDataProp.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\4_server-side\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.iDataSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\fnServerData.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_arrays_subobjects.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_deep.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_mDataProp.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_null_source.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects_subarrays.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSorting.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSortingFixed.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSearchable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSortable.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bUseRendered.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bVisible.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.fnRender.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.iDataSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sClass.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sName.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sTitle.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoSearchCols.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\asStripClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bAutoWidth.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bFilter.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bLengthChange.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bServerSide.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSort.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSortClasses.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnDrawCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnHeaderCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnInitComplete.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnRowCallback.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnServerData.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\iDisplayLength.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.oPaginate.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfo.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoEmpty.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoPostFix.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sLengthMenu.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sProcessing.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sUrl.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sZeroRecords.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\oSearch.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp2.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxSource.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\sDom.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\sPaginationType.js" />
+    <Content Include="js\datatables\unit_testing\tests_onhold\6_delayed_rendering\_zero_config.js" />
+    <Content Include="js\datatables\unit_testing\unit_test.js" />
+    <Content Include="js\datepicker\daterangepicker.js" />
+    <Content Include="js\dropzone\dropzone.js" />
+    <Content Include="js\easypie\jquery.easypiechart.min.js" />
+    <Content Include="js\echart\echarts-all.js" />
+    <Content Include="js\echart\green.js" />
+    <Content Include="js\editor\bootstrap-wysiwyg.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-apollo.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-basic.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-clj.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-css.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-dart.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-erlang.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-go.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-hs.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-lisp.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-llvm.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-lua.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-matlab.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-ml.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-mumps.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-n.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-pascal.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-proto.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-r.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-rd.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-scala.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-sql.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-tcl.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-tex.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-vb.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-vhdl.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-wiki.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-xq.js" />
+    <Content Include="js\editor\external\google-code-prettify\lang-yaml.js" />
+    <Content Include="js\editor\external\google-code-prettify\prettify.js" />
+    <Content Include="js\editor\external\google-code-prettify\run_prettify.js" />
+    <Content Include="js\editor\external\jquery.hotkeys.js" />
+    <Content Include="js\flot\curvedLines.js" />
+    <Content Include="js\flot\date.js" />
+    <Content Include="js\flot\jquery.flot.js" />
+    <Content Include="js\flot\jquery.flot.orderBars.js" />
+    <Content Include="js\flot\jquery.flot.pie.js" />
+    <Content Include="js\flot\jquery.flot.resize.js" />
+    <Content Include="js\flot\jquery.flot.spline.js" />
+    <Content Include="js\flot\jquery.flot.stack.js" />
+    <Content Include="js\flot\jquery.flot.time.min.js" />
+    <Content Include="js\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="js\gauge\gauge.min.js" />
+    <Content Include="js\gauge\gauge_demo.js" />
+    <Content Include="js\icheck\icheck.min.js" />
+    <Content Include="js\input_mask\jquery.inputmask.js" />
+    <Content Include="js\ion_range\ion.rangeSlider.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\knob\jquery.knob.min.js" />
+    <Content Include="js\maps\gdp-data.js" />
+    <Content Include="js\maps\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="js\maps\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="js\maps\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="js\moment\moment.min.js" />
+    <Content Include="js\moris\example.js" />
+    <Content Include="js\moris\morris.min.js" />
+    <Content Include="js\moris\raphael-min.js" />
+    <Content Include="js\nicescroll\jquery.nicescroll.min.js" />
+    <Content Include="js\notify\pnotify.buttons.js" />
+    <Content Include="js\notify\pnotify.core.js" />
+    <Content Include="js\notify\pnotify.nonblock.js" />
+    <Content Include="js\nprogress.js" />
+    <Content Include="js\pace\pace.min.js" />
+    <Content Include="js\parsley\parsley.min.js" />
+    <Content Include="js\progressbar\bootstrap-progressbar.min.js" />
+    <Content Include="js\select\select2.full.js" />
+    <Content Include="js\sidebar\classie.js" />
+    <Content Include="js\sidebar\component.css" />
+    <Content Include="js\sidebar\modernizr.custom.js" />
+    <Content Include="js\sidebar\sidebarEffects.js" />
+    <Content Include="js\skycons\skycons.min.js" />
+    <Content Include="js\sparkline\jquery.sparkline.min.js" />
+    <Content Include="js\switchery\switchery.min.js" />
+    <Content Include="js\tags\jquery.tagsinput.min.js" />
+    <Content Include="js\textarea\autosize.min.js" />
+    <Content Include="js\validator\validator.js" />
+    <Content Include="js\wizard\jquery.smartWizard.js" />
+    <Content Include="less\custom.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-2.2.1.js" />
+    <Content Include="Scripts\jquery-2.2.1.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.af.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.am.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ar.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.arn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.as.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.az.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ba.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.be.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bg.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bo.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.br.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.bs.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ca.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.co.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.cs.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.cy.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.da.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.de.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.dv.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.el.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.en.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.es.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.et.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.eu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fa.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fi.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fil.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fo.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.fy.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ga.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gd.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.gu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ha.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.he.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hi.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.hy.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.id.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ig.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ii.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.is.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.it.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.iu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ja.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ka.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kk.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.km.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ko.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.kok.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ky.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lb.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lo.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lt.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.lv.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mi.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mk.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ml.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.moh.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ms.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.mt.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nb.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ne.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.no.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.nso.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.oc.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.or.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pa.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.prs.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ps.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.pt.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.qut.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.quz.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.rm.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ro.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ru.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.rw.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sa.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sah.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.se.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.si.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sk.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sma.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.smj.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.smn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sms.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sq.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sv.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.sw.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.syr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ta.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.te.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tg.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.th.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tk.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tr.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tt.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ug.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uk.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.ur.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.uz.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.vi.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.wo.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.xh.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.yo.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zh.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\cultures\kendo.culture.zu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\jquery.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.autocomplete.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.binder.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.calendar.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.columnmenu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.combobox.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.core.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.data.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.data.odata.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.data.xml.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.datepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.datetimepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.draganddrop.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.dropdownlist.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.editable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.editor.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.filtermenu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.fx.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.grid.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.groupable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.list.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.listview.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.menu.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.mobile.scroller.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.numerictextbox.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.pager.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.panelbar.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.popup.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.reorderable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.resizable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.selectable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.slider.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.sortable.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.splitter.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.tabstrip.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.timepicker.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.treeview.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.upload.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.validator.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.web.min.js" />
+    <Content Include="Scripts\kendo\2012.2.710\kendo.window.min.js" />
+    <Content Include="Scripts\kendo\kendo.all.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-2.2.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AttributeRoutingHttp.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="DashboardEditor.aspx.cs">
+      <DependentUpon>DashboardEditor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DashboardEditor.aspx.designer.cs">
+      <DependentUpon>DashboardEditor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Charts.aspx.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Charts.aspx.designer.cs">
+      <DependentUpon>Charts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ChartsController.cs" />
+    <Compile Include="Controllers\ConnectionsController.cs" />
+    <Compile Include="Connections.aspx.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connections.aspx.designer.cs">
+      <DependentUpon>Connections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DashBox.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DashBox.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DynamicsCRM.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Connection.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\DashBox.dbml.layout">
+      <DependentUpon>DashBox.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\datatables\images\Sorting icons.psd" />
+    <Content Include="Data\DashBox.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DashBox.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts\FontAwesome.otf" />
+    <Content Include="fonts\less\animated.less" />
+    <Content Include="fonts\less\bordered-pulled.less" />
+    <Content Include="fonts\less\core.less" />
+    <Content Include="fonts\less\fixed-width.less" />
+    <Content Include="fonts\less\font-awesome.less" />
+    <Content Include="fonts\less\icons.less" />
+    <Content Include="fonts\less\larger.less" />
+    <Content Include="fonts\less\list.less" />
+    <Content Include="fonts\less\mixins.less" />
+    <Content Include="fonts\less\path.less" />
+    <Content Include="fonts\less\rotated-flipped.less" />
+    <Content Include="fonts\less\spinning.less" />
+    <Content Include="fonts\less\stacked.less" />
+    <Content Include="fonts\less\variables.less" />
+    <Content Include="fonts\scss\font-awesome.scss" />
+    <Content Include="fonts\scss\_animated.scss" />
+    <Content Include="fonts\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\scss\_core.scss" />
+    <Content Include="fonts\scss\_fixed-width.scss" />
+    <Content Include="fonts\scss\_icons.scss" />
+    <Content Include="fonts\scss\_larger.scss" />
+    <Content Include="fonts\scss\_list.scss" />
+    <Content Include="fonts\scss\_mixins.scss" />
+    <Content Include="fonts\scss\_path.scss" />
+    <Content Include="fonts\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\scss\_spinning.scss" />
+    <Content Include="fonts\scss\_stacked.scss" />
+    <Content Include="fonts\scss\_variables.scss" />
+    <Content Include="images\Sorting icons.psd" />
+    <Content Include="js\datatables\images\Sorting icons.psd" />
+    <Content Include="js\datatables\tools\.gitignore" />
+    <Content Include="js\datatables\tools\as3\lib\AlivePDF.swc" />
+    <Content Include="js\datatables\tools\as3\ZeroClipboard.as" />
+    <Content Include="js\datatables\tools\as3\ZeroClipboardPdf.as" />
+    <Content Include="js\datatables\tools\bower.json" />
+    <Content Include="js\datatables\tools\images\psd\collection.psd" />
+    <Content Include="js\datatables\tools\images\psd\copy document.psd" />
+    <Content Include="js\datatables\tools\images\psd\file_types.psd" />
+    <Content Include="js\datatables\tools\images\psd\printer.psd" />
+    <Content Include="js\datatables\tools\make.sh" />
+    <Content Include="js\datatables\tools\TableTools-master\.gitignore" />
+    <Content Include="js\datatables\tools\TableTools-master\as3\lib\AlivePDF.swc" />
+    <Content Include="js\datatables\tools\TableTools-master\as3\ZeroClipboard.as" />
+    <Content Include="js\datatables\tools\TableTools-master\as3\ZeroClipboardPdf.as" />
+    <Content Include="js\datatables\tools\TableTools-master\bower.json" />
+    <Content Include="js\datatables\tools\TableTools-master\images\psd\collection.psd" />
+    <Content Include="js\datatables\tools\TableTools-master\images\psd\copy document.psd" />
+    <Content Include="js\datatables\tools\TableTools-master\images\psd\file_types.psd" />
+    <Content Include="js\datatables\tools\TableTools-master\images\psd\printer.psd" />
+    <Content Include="js\datatables\tools\TableTools-master\make.sh" />
+    <Content Include="js\datatables\unit_testing\controller.php" />
+    <Content Include="js\datatables\unit_testing\performance\large.php" />
+    <Content Include="js\datatables\unit_testing\templates\-complex_header.php" />
+    <Content Include="js\datatables\unit_testing\templates\2512.php" />
+    <Content Include="js\datatables\unit_testing\templates\6776.php" />
+    <Content Include="js\datatables\unit_testing\templates\complex_header_2.php" />
+    <Content Include="js\datatables\unit_testing\templates\deferred_table.php" />
+    <Content Include="js\datatables\unit_testing\templates\dom_data.php" />
+    <Content Include="js\datatables\unit_testing\templates\dom_data_th.php" />
+    <Content Include="js\datatables\unit_testing\templates\dom_data_two_headers.php" />
+    <Content Include="js\datatables\unit_testing\templates\dymanic_table.php" />
+    <Content Include="js\datatables\unit_testing\templates\empty_table.php" />
+    <Content Include="js\datatables\unit_testing\templates\html_table.php" />
+    <Content Include="js\datatables\unit_testing\templates\js_data.php" />
+    <Content Include="js\datatables\unit_testing\templates\js_data_mixed_types.php" />
+    <Content Include="js\datatables\unit_testing\templates\two_tables.php" />
+    <Content Include="js\maps\us-unemployment.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1048</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1052/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

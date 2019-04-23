@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DashBox">
+  <DataContextMoniker Name="/DashBoxDataContext" />
+  <nestedChildShapes>
+    <classShape Id="d4bfbc70-2cc5-439f-bcef-d06a338c89cf" absoluteBounds="0.75, 3.75, 2, 1.193992513020834">
+      <DataClassMoniker Name="/DashBoxDataContext/ChartType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b869694-88fe-4aa1-99b2-e6e6eb432aee" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5496cb8f-259e-4775-a540-caf03685ebb8" absoluteBounds="0.75, 6.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DashBoxDataContext/Dashboard" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee752b41-1122-4a7b-9234-9e6940d6c488" absoluteBounds="0.765, 7.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1313f651-59c6-48bf-8603-5a0264e44830" absoluteBounds="4, 1.375, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DashBoxDataContext/Layout" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60c0e8c3-724e-4e52-b8a1-26685cce9bd7" absoluteBounds="4.015, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="daf28ff6-d313-415a-9ebb-6cf21ae5d6c0" absoluteBounds="0.875, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DashBoxDataContext/Chart" />
+      <nestedChildShapes>
+        <elementListCompartment Id="010569de-758b-4f2d-b13a-0247d87422bb" absoluteBounds="0.89000000000000012, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1dff9d6f-570e-42bf-8b5f-e7847d6364a7" absoluteBounds="4.5, 3.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DashBoxDataContext/Component" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20d58ded-9050-4058-94ee-3ff503d28467" absoluteBounds="4.515, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad52a5ca-d8d7-4570-8706-3e425191b8d5" absoluteBounds="4.125, 6.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DashBoxDataContext/Users" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60a99e99-0d33-445b-a540-e90bc31d0fa6" absoluteBounds="4.1400000000000006, 6.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d9096cdd-d358-47a2-a1b9-bb6d044622bb" absoluteBounds="7, 1.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DashBoxDataContext/Connections" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5add258-7d92-4dfb-9906-cb46ca791f21" absoluteBounds="7.015, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

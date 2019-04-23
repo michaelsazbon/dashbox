@@ -1,0 +1,141 @@
+USE [Master]
+GO
+
+CREATE DATABASE [Dashbox] ON  PRIMARY 
+( NAME = N'Dashbox', FILENAME = N'\Dashbox.mdf' , 
+  SIZE = 2GB , MAXSIZE = 8GB, FILEGROWTH = 1GB )
+LOG ON 
+( NAME = N'Dashbox_log', FILENAME = N'\Dashbox.ldf' , 
+  SIZE = 1GB , MAXSIZE = 2GB , FILEGROWTH = 10%)
+GO
+
+USE [Dashbox]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Layouts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nom] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Layouts] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Layouts] ON
+INSERT [dbo].[Layouts] ([Id], [Nom]) VALUES (1, N'2 colonnes')
+INSERT [dbo].[Layouts] ([Id], [Nom]) VALUES (2, N'3 colonnes')
+INSERT [dbo].[Layouts] ([Id], [Nom]) VALUES (3, N'3 colonnes présentation')
+SET IDENTITY_INSERT [dbo].[Layouts] OFF
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Dashboards](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nom] [nvarchar](250) NULL,
+	[LayoutId] [int] NULL,
+ CONSTRAINT [PK_Dashboards] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Connections](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nom] [nvarchar](250) NULL,
+	[Url] [nvarchar](250) NULL,
+	[Username] [nvarchar](250) NULL,
+	[Password] [nvarchar](250) NULL,
+	[Source] [nvarchar](250) NULL,
+	[Domaine] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Connections] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Components](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nom] [nvarchar](250) NULL,
+	[ChartId] [int] NULL,
+	[Postion] [int] NULL,
+	[DashboardId] [int] NULL,
+ CONSTRAINT [PK_Sections] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[ChartTypes](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Nom] [nvarchar](250) NULL,
+ CONSTRAINT [PK_ChartType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[ChartTypes] ON
+INSERT [dbo].[ChartTypes] ([Id], [Nom]) VALUES (3, N'Colonne')
+INSERT [dbo].[ChartTypes] ([Id], [Nom]) VALUES (4, N'Colonnes empilées')
+INSERT [dbo].[ChartTypes] ([Id], [Nom]) VALUES (5, N'Secteur')
+SET IDENTITY_INSERT [dbo].[ChartTypes] OFF
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Charts](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ConnectionId] [int] NULL,
+	[Nom] [nvarchar](250) NULL,
+	[TypeId] [int] NULL,
+	[EntiteName] [nvarchar](250) NULL,
+	[SerieColumnName] [nvarchar](250) NULL,
+	[CategorieColumnName] [nvarchar](250) NULL,
+	[Categorie2ColumnName] [nvarchar](250) NULL,
+	[SerieAgregationType] [nvarchar](250) NULL,
+ CONSTRAINT [PK_Charts] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Users](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [nvarchar](100) NOT NULL,
+	[Password] [nvarchar](100) NOT NULL,
+ CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Users] ON
+INSERT [dbo].[Users] ([Id], [Username], [Password]) VALUES (1, N'admin', N'12345678')
+SET IDENTITY_INSERT [dbo].[Users] OFF
