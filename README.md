@@ -1,6 +1,6 @@
 # Dashbox (Feb 2016)
 
-A Web App (Asp.Net WebApi/ JQuery / Dyanmics CRM SDK) for building beautiful dashboards with charts coming from multiple data sources (initialy Dynamics CRM 2011 to 365 but also SBO, SAGE 100...). The App is based on the awesome Gentelella Bootstrap template (https://github.com/ColorlibHQ/gentelella).  
+A Web App (Asp.Net WebApi/ JQuery / chart.js / Dyanmics CRM SDK) for building beautiful dashboards with charts coming from multiple data sources (initialy Dynamics CRM 2011 to 365 but also SBO, SAGE 100...). The App is based on the awesome Gentelella Bootstrap template (https://github.com/ColorlibHQ/gentelella).  
 Labels are in french language :-).
 
 
